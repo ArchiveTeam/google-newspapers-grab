@@ -58,8 +58,9 @@ if not WGET_LUA:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = '20180806.01'
-USER_AGENT = "We don't know how to contact you. Can you please email us at archiveteam@archiveteam.org? Thank you, Archive Team."
+VERSION = '20180813.01'
+with open('user-agents.txt', 'r') as f:
+    USER_AGENT = random.choice(f.read().splitlines()).strip()
 TRACKER_ID = 'google-newspapers'
 TRACKER_HOST = 'tracker.archiveteam.org'
 
@@ -271,4 +272,5 @@ pipeline = Pipeline(
         stats=ItemValue('stats')
     )
 )
+
 
