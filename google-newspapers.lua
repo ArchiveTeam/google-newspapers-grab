@@ -110,6 +110,8 @@ wget.callbacks.httploop_result = function(url, err, http_stat)
     return wget.actions.ABORT
   end
 
+  os.execute("sleep 0.5")
+
   return wget.actions.NOTHING
 end
 
